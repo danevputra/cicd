@@ -6,11 +6,11 @@ include("config.php");
 if(isset($_POST['daftar'])){
 
     // ambil data dari formulir
-    $nama = $mysqli -> $_POST['name'];
-    $alamat = $mysqli -> $_POST['alamat'];
-    $jk = $mysqli -> $_POST['jenis_kelamin'];
-    $agama = $mysqli -> $_POST['agama'];
-    $sekolah = $mysqli -> $_POST['sekolah_asal'];
+    $nama = $_POST['name'];
+    $alamat = $_POST['alamat'];
+    $jk = $_POST['jenis_kelamin'];
+    $agama = $_POST['agama'];
+    $sekolah = $_POST['sekolah_asal'];
 
     // buat query
     $sql = "INSERT INTO calon_siswa (nama, alamat, jenis_kelamin, agama, sekolah_asal) VALUE ('$nama', '$alamat', '$jk', '$agama', '$sekolah')";
