@@ -6,7 +6,7 @@ include("config.php");
 if(isset($_POST['daftar'])){
 
     // ambil data dari formulir
-    $nama = $mysqli -> $_POST['nama'];
+    $nama = $mysqli -> $_POST['name'];
     $alamat = $mysqli -> $_POST['alamat'];
     $jk = $mysqli -> $_POST['jenis_kelamin'];
     $agama = $mysqli -> $_POST['agama'];
