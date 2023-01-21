@@ -6,15 +6,14 @@ include("config.php");
 if(isset($_POST['daftar'])){
 
     // ambil data dari formulir
-    $nama = $mysqli -> $_POST['nama'];
-    $alamat = $mysqli -> $_POST['alamat'];
-    $jk = $mysqli -> $_POST['jenis_kelamin'];
-    $agama = $mysqli -> $_POST['agama'];
-    $sekolah = $mysqli -> $_POST['sekolah_asal'];
-    $sekolah2 = $mysqli -> $_POST['sekolah_asal2'];
+    $nama = mysqli_real_escape_string($db, $_POST['name']);
+    $alamat = mysqli_real_escape_string($db, $_POST['alamat']);
+    $jk = mysqli_real_escape_string($db, $_POST['jenis_kelamin']);
+    $agama = mysqli_real_escape_string($db, $_POST['agama']);
+    $sekolah = mysqli_real_escape_string($db, $_POST['sekolah_asal']);
 
     // buat query
-    $sql = "INSERT INTO calon_siswa (nama, alamat, jenis_kelamin, agama, sekolah_asal2) VALUE ('$nama', '$alamat', '$jk', '$agama', '$sekolah2')";
+    $sql = "INSERT INTO calon_siswa (nama, alamat, jenis_kelamin, agama, sekolah_asal) VALUE ('$nama', '$alamat', '$jk', '$agama', '$sekolah')";
     $query = mysqli_query($db, $sql);
 
     // apakah query simpan berhasil?
